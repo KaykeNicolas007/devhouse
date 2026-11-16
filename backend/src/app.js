@@ -1,9 +1,15 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const routes = require("./routes");
 
 class App {
   constructor() {
     this.server = express();
+
+    mongoose.connect(
+      "mongodb+srv://devhouse:devhouse@cluter0.g58civ1.mongodb.net/",
+    );
+
     this.middlewares();
     this.routes();
   }
