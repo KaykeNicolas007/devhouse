@@ -1,6 +1,7 @@
 # Custom
 src/postman**
 *.postman
+uploads/**
 
 # Logs
 logs
