@@ -4,6 +4,7 @@ const uploadConfig = require("./config/upload");
 
 const SessionController = require("./controllers/SessionController");
 const HouseController = require("./controllers/HouseController");
+const DashboardController = require("./controllers/DashboardController.js");
 
 const routes = new Router();
 const upload = multer(uploadConfig);
@@ -18,5 +19,7 @@ routes.put(
   HouseController.update,
 );
 routes.delete("/houses", HouseController.destroy);
+
+routes.get("/dashboard", DashboardController.show);
 
 module.exports = routes;
