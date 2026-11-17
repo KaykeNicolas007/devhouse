@@ -40,6 +40,14 @@ class ReserveController {
 
     return res.json(reserves);
   }
+
+  async destroy(req, res) {
+    const { reserve_id } = req.body;
+
+    await Reserve.findByIdAndDelete({ _id: reserve_id });
+
+    return res.send();
+  }
 }
 
 module.exports = new ReserveController();
